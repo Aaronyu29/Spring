@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <import resource="dependency-injection-context.xml"/>-->
+<bean id="beanId2" class="container.overview.domain.Company" autowire="byName">
+</bean>
+<bean id="emp" class="container.overview.domain.Employee">
+    <property name="name" value="Aaron"/>
+    <property name="id" value="2"/>
+</bean>
+</beans>
