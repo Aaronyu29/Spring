@@ -1,4 +1,4 @@
-package ioc.dependency.injection.xml;
+package ioc.dependency.injection.constructor;
 
 import ioc.dependency.injection.UserHolder;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @auther AaronYu
  * @date 2020/5/18 16:21
  */
-public class APIDependencyInjectionDemo {
+public class APIDependencyConstructorInjectionDemo {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
@@ -31,7 +31,8 @@ public class APIDependencyInjectionDemo {
 
     private static BeanDefinition createDefinition() {
         BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(UserHolder.class);
-        beanDefinitionBuilder.addPropertyReference("employee","boss");
+        beanDefinitionBuilder.addConstructorArgReference("boss");
+//        beanDefinitionBuilder.addPropertyReference("employee","boss");
         return beanDefinitionBuilder.getBeanDefinition();
     }
 }
